@@ -7,20 +7,20 @@ pipeline {
 
   environment {
     APP_NAME = "myapp"
-    REGION = "us-east-1"
+    REGION   = "us-east-1"
   }
 
-
+  stages {
 
     stage('Assume Role') {
       steps {
         script {
           if (params.ENV == "dev") {
-            ACCOUNT_ID="140191459435"
+            env.ACCOUNT_ID = "140191459435"
           } else if (params.ENV == "qa") {
-            ACCOUNT_ID="222222222"
+            env.ACCOUNT_ID = "222222222"
           } else {
-            ACCOUNT_ID="333333333"
+            env.ACCOUNT_ID = "333333333"
           }
         }
       }
@@ -65,5 +65,6 @@ pipeline {
         """
       }
     }
+
   }
 }
