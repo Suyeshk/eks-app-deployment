@@ -1,0 +1,5 @@
+image:
+  repository: 140191459435.dkr.ecr.us-east-1.amazonaws.com/myapp
+  tag: dev-latest
+
+environment: dev
