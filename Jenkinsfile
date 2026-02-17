@@ -10,13 +10,7 @@ pipeline {
     REGION = "us-east-1"
   }
 
-  stages {
 
-    stage('Checkout') {
-      steps {
-        git 'https://github.com/Suyeshk/eks-app-deployment.git'
-      }
-    }
 
     stage('Assume Role') {
       steps {
